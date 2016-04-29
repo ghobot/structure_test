@@ -59,7 +59,7 @@
 				document.body.appendChild( container );
 
 				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
-				camera.position.z = 250;
+				camera.position.z = mouseX;
 
 				// scene
 
@@ -93,7 +93,7 @@
 					var objLoader = new THREE.OBJLoader();
 					//objLoader.setMaterials( materials );
 			
-					objLoader.load( 'obj/model_mesh.obj', function ( object ) {
+					objLoader.load( 'obj/model_mesh.obj', 'obj/model_mesh.obj.mtl',function ( object ) {
 
 						object.position.y = - 95;
 						scene.add( object );
